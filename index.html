@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>Weather Wise</title>
 </head>
 
@@ -38,11 +38,14 @@
 
     <!--Todays' weather-->
     <section class="section width">
-        <h1 class="title">Section</h1>
-        <h2 class="subtitle">
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently
-            reading.
-        </h2>
+        <section class="section width">
+            <h1 class="todayDate"></h1>
+            <h2 class="todayTemp"></h2>
+            <h2 class="todayWind"></h2>
+            <h2 class="todayHumid"></h2>
+            <img id="todayIcon"><br>
+        </section>
+
     </section>
 
     <!--future forecast to be populated by API-->
@@ -51,23 +54,35 @@
 
         <div class="tile is-parent">
             <article class="tile is-child notification is-link" id="day2">
-                <p class="title">Day 2</p>
-                <p class="subtitle">with class is-info</p>
+                <p class="futureDay title"></p>
+                <p class="cityDisplay is-info"></p>
+                <p class="tempDisplay"></p>
+                <p class="windDisplay"></p>
+                <p class="huimdDisplay"></p>
             </article>
 
             <article class="tile is-child notification is-link" id="day3">
-                <p class="title">Day 3</p>
-                <p class="subtitle">with class is-info</p>
+                <p class="futureDay title"></p>
+                <p class="cityDisplay is-info"></p>
+                <p class="tempDisplay"></p>
+                <p class="windDisplay"></p>
+                <p class="huimdDisplay"></p>
             </article>
 
             <article class="tile is-child notification is-link" id="day4">
-                <p class="title">Day 4</p>
-                <p class="subtitle">with class is-info</p>
+                <p class="futureDay title"></p>
+                <p class="cityDisplay is-info"></p>
+                <p class="tempDisplay"></p>
+                <p class="windDisplay"></p>
+                <p class="huimdDisplay"></p>
             </article>
 
             <article class="tile is-child notification is-link" id="day5">
-                <p class="title">Day 5</p>
-                <p class="subtitle">with class is-info</p>
+                <p class="futureDay title"></p>
+                <p class="cityDisplay is-info"></p>
+                <p class="tempDisplay"></p>
+                <p class="windDisplay"></p>
+                <p class="huimdDisplay"></p>
             </article>
         </div>
 
