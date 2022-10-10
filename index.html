@@ -22,29 +22,26 @@
         </div>
     </section>
 
-    <aside class="columns is-mobie p-5 ">
-        <div class="field has-addons">
-            <p class="control">
-                <input class="input" type="text" placeholder="Search for location">
-            </p>
-            <p class="control">
-                <button class="button is-link is-light is-rounded" id="searchButton">
-                    Search
-                </button>
-            </p>
-        </div>
-        </div>
-    </aside>
+    <section class="section is-mobile p-5 level-item is-pulled-left w-50">
+        <div class="block field-has-addons">
+            <input class="input control searchInput" type="text" placeholder="Search for location">
+            <button class="button is-link is-light p-5" id="searchButton">
+            Search
+            </button>
+            <h2 class="info"> Recent Searches:</h2>
+            <p id="recentSearch info"></p>
+        </div> 
+    </section>
 
     <!--Todays' weather-->
-    <section class="section width">
-        <section class="section width">
+    <section class="section w-50">
+        <div class="section">
             <h1 class="todayDate"></h1>
             <h2 class="todayTemp"></h2>
             <h2 class="todayWind"></h2>
             <h2 class="todayHumid"></h2>
             <img id="todayIcon"><br>
-        </section>
+        </div>
 
     </section>
 
