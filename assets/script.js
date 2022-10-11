@@ -67,7 +67,7 @@ function futureWeather(daily, time) {
 function cityInfo (cityData) {
     var lat = cityData.lat;
     var lon = cityData.lon;
-    var city = cityData.name
+    var city = cityData.name;
 
     var url = `${apiUrl}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${apiKey}`;
 
@@ -82,7 +82,9 @@ function cityInfo (cityData) {
     .catch(function (err){
         console.error(err);
     });
-}
+};
+
+
 
 
 
