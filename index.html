@@ -26,11 +26,11 @@
         <div class="block field-has-addons">
             <input class="input control searchInput" type="text" placeholder="Search for location">
             <button class="button is-link is-light p-5" id="searchButton">
-            Search
+                Search
             </button>
             <h2 class="info"> Recent Searches:</h2>
             <p id="recentSearch info"></p>
-        </div> 
+        </div>
     </section>
 
     <!--Todays' weather-->
@@ -47,39 +47,46 @@
 
     <!--future forecast to be populated by API-->
 
-    <main class="tile is-ancestor">
+    <main class="tile is-ancestor" id="hiddenCards">
 
         <div class="tile is-parent">
+            <article class="tile is-child notification is-link" id="day1">
+                <p class="futureDay title"></p>
+                <p class="cityDisplay is-info"></p>
+                <p id="day1Temp"></p>
+                <p id="day1Wind"></p>
+                <p id="day1Hum"></p>
+            </article>
+
             <article class="tile is-child notification is-link" id="day2">
                 <p class="futureDay title"></p>
                 <p class="cityDisplay is-info"></p>
-                <p class="tempDisplay"></p>
-                <p class="windDisplay"></p>
-                <p class="huimdDisplay"></p>
+                <p id="day2Temp"></p>
+                <p id="day2Wind"></p>
+                <p id="day2Humid"></p>
             </article>
 
             <article class="tile is-child notification is-link" id="day3">
                 <p class="futureDay title"></p>
                 <p class="cityDisplay is-info"></p>
-                <p class="tempDisplay"></p>
-                <p class="windDisplay"></p>
-                <p class="huimdDisplay"></p>
+                <p id="day3Temp"></p>
+                <p id="day3Wind"></p>
+                <p id="day3Humid"></p>
             </article>
 
             <article class="tile is-child notification is-link" id="day4">
                 <p class="futureDay title"></p>
                 <p class="cityDisplay is-info"></p>
-                <p class="tempDisplay"></p>
-                <p class="windDisplay"></p>
-                <p class="huimdDisplay"></p>
-            </article>
+                <p id="day4Temp"></p>
+                <p id="day4Wind"></p>
+                <p id="day4Humid"></p>
 
             <article class="tile is-child notification is-link" id="day5">
                 <p class="futureDay title"></p>
                 <p class="cityDisplay is-info"></p>
-                <p class="tempDisplay"></p>
-                <p class="windDisplay"></p>
-                <p class="huimdDisplay"></p>
+                <p id="day5Temp"></p>
+                <p id="day5Wind"></p>
+                <p id="day5humid"></p>
             </article>
         </div>
 
