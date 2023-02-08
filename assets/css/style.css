@@ -10,7 +10,9 @@ header {
     text-align: center;
     background-image: linear-gradient(to right, #3b64c4, #1a117f);
     color: white;
-    padding: 10px;
+    padding: 5rem;
+    font-family: 'Londrina Sketch', cursive;
+    
 }
 
 .fiveday {
