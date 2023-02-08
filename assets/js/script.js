@@ -1,12 +1,12 @@
-var apiKey = "bd55593ecb666c01d38f4ec9276324e8";
-
-var city = "";
+var apiKey = "a482eebcbf9ee83cb4294b628f9db685";
 var searchCity = $("#city-input");
 var searchButton = $("#search-button");
 var currentCity = $("#current-city");
 var currentTemperature = $("#temperature");
 var currentHumidity = $("#humidity");
 var currentWind = $("#wind-speed");
+var city = "";
+
 var sCity = [];
 
 function find(c) {

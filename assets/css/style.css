@@ -3,37 +3,42 @@ body {
     font-size: 16px;
     font: bolder;
     line-height: 1;
+    background-image: linear-gradient(to right, #3b64c4, #1a117f);
 }
 
 header {
     text-align: center;
-    background-image: linear-gradient(to right, #3b6ec4, #230455);
+    background-image: linear-gradient(to right, #3b64c4, #1a117f);
     color: white;
     padding: 10px;
+}
+
+.fiveday {
+    color: whitesmoke;
+    margin: 2rem;
+    text-align: center;
+}
+
+.city-search {
+    border-radius: 5px;
+    padding: 2rem;
+    background-color: rgb(197, 200, 199);
 }
 
 .list-group {
     cursor: pointer;
 }
 
-#future-weather-card {
-    background-color: #3260b0;
+.current-weather {
+    color: black;
+    background-color: rgb(197, 200, 199);
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        display: grid;
-    }
+.future-forecast {
+    color: black;
+}
 
-    section {
-        display: block;
-    }
+#future-weather-card {
+    background-color: rgb(197, 200, 199);
 
-    .row {
-        display: block;
-    }
-
-    .col-6 {
-        max-width: 100%;
-    }
 }
