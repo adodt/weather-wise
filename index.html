@@ -5,92 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>Weather Wise</title>
 </head>
 
 <body>
-    <section class="hero is-link">
-        <div class="hero-body">
-            <p class="title" id="currentDate">
-            </p>
-            <p class="subtitle">
-                5 Day Weather Forecast
-            </p>
+    <header>
+        <h1 class="'display"> Weather Wise </h1>
+    </header>
+
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-sm-2 bg-light">
+                <h4 class="'pt-1">City Search:</h4>
+                <div class="input-group mb-3">
+                    <input type="'text" class="form-control" id="city-input" placeholder="Search by City">
+                    <div class="'input-group-append">
+                        <button class="btn bg-primary text-light" id="search-button"><i class="fa-magnifying-glass"></i>&128269</button>
+                    </div>
+                </div>
+
+                <ul class="list-group"></ul>
+            </div>
+            <div class="col-sm-9">
+                <div class="row ml-2 border rounded">
+                    <div class="col-sm-12" id="current-weather">
+                        <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
+                        <p>Temperature:<span class='current' id='temperature'></span></p>
+                        <p>Humidity:<span class='current' id='humidity'></span></p>
+                        <p>Wind:<span class='current' id='wind-speed'></span></p>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-    </section>
-
-    <section class="section is-mobile p-5 level-item is-pulled-left w-50">
-        <div class="block field-has-addons">
-            <input class="input control searchInput" type="text" placeholder="Search for location">
-            <button class="button is-link is-light p-5" id="searchButton">
-                Search
-            </button>
-            <h2 class="info"> Recent Searches:</h2>
-            <p id="recentSearch info"></p>
-        </div>
-    </section>
-
-    <!--Todays' weather-->
-    <section class="section w-50">
-        <div class="section">
-            <h1 class="todayDate"></h1>
-            <h2 class="todayTemp"></h2>
-            <h2 class="todayWind"></h2>
-            <h2 class="todayHumid"></h2>
-            <img id="todayIcon"><br>
-        </div>
-
-    </section>
-
-    <!--future forecast to be populated by API-->
-
-    <main class="tile is-ancestor" id="hiddenCards">
-
-        <div class="tile is-parent">
-            <article class="tile is-child notification is-link" id="day1">
-                <p class="futureDay title"></p>
-                <p class="cityDisplay is-info"></p>
-                <p id="day1Temp"></p>
-                <p id="day1Wind"></p>
-                <p id="day1Hum"></p>
-            </article>
-
-            <article class="tile is-child notification is-link" id="day2">
-                <p class="futureDay title"></p>
-                <p class="cityDisplay is-info"></p>
-                <p id="day2Temp"></p>
-                <p id="day2Wind"></p>
-                <p id="day2Humid"></p>
-            </article>
-
-            <article class="tile is-child notification is-link" id="day3">
-                <p class="futureDay title"></p>
-                <p class="cityDisplay is-info"></p>
-                <p id="day3Temp"></p>
-                <p id="day3Wind"></p>
-                <p id="day3Humid"></p>
-            </article>
-
-            <article class="tile is-child notification is-link" id="day4">
-                <p class="futureDay title"></p>
-                <p class="cityDisplay is-info"></p>
-                <p id="day4Temp"></p>
-                <p id="day4Wind"></p>
-                <p id="day4Humid"></p>
-
-            <article class="tile is-child notification is-link" id="day5">
-                <p class="futureDay title"></p>
-                <p class="cityDisplay is-info"></p>
-                <p id="day5Temp"></p>
-                <p id="day5Wind"></p>
-                <p id="day5humid"></p>
-            </article>
-        </div>
-
-    </main>
+    </div>
+</body>
 
 
     <!--scripts for moment, jquery, and -->

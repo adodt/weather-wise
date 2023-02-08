@@ -4,7 +4,7 @@ var apiKey = "0c8dcf810ad08707d092e05436d4c4c0";
 var apiUrl = "https://api.openweathermap.org";
 var recentSearch = [];
 var searchInput = document.getElementById("searchInput");
-var searchButton = document.getElementById("searchButton")
+var searchButton = document.querySelector("searchButton")
 
 
 
@@ -64,7 +64,7 @@ function futureWeather(daily, time) {
 
 //Calling API
 
-function cityInfo (cityData) {
+function cityInfo(cityData) {
     var lat = cityData.lat;
     var lon = cityData.lon;
     var city = cityData.name;
@@ -72,19 +72,64 @@ function cityInfo (cityData) {
     var url = `${apiUrl}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${apiKey}`;
 
     fetch(url)
-    .then(function (res){
-        return res.json();
-    })
-    .then(function (data){
-        drawTodayCard(city, data.current, data.timezone);
-        drawFiveDay(data.dail, data.timezone);
-    })
-    .catch(function (err){
-        console.error(err);
-    });
+        .then(function (res) {
+            return res.json();
+        })
+        .then(function (data) {
+            drawTodayCard(city, data.current, data.timezone);
+            drawFiveDay(data.dail, data.timezone);
+        })
+        .catch(function (err) {
+            console.error(err);
+        });
 };
 
 
+//makes API call using city name aka user search
+//passes lat and long
+
+function getLatLon(search) {
+    var url = apiUrl + "/geo/1.0/direct?q=" + search + "&limit=5&appid=" + apiKey;
+    fetch(url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            if (!data[0]) {
+                alert("location not found");
+            } else {
+                addHistory(search)
+                getCityInfo(data[0]);
+                return;
+            }
+        })
+        .catch(function (err) {
+            console.log("error: " + err);
+        })
+    const content = document.getElementById("hiddenCards");
+    content.removeAttribute("hiddenCards");
+};
+
+//function starts when button is clicked
+function citySearch(e){
+    if (searchInput.value) {
+        return;
+    };
+    e.preventDefault();
+    var search = searchInput.value.trim();
+    getLatLon(search);
+    searchInput.value = "enter city name";
+};
+
+//begin search for lat and lon value using search history buttons instead of input field
+function useSearchHistory(e) {
+    if (!e.target.matches("button.history")) {
+        return;
+    }
+    var btn = e.target;
+    var search = btn.getAttribute("data-search");
+    getLatLon(search);
+};
 
 
 
@@ -92,5 +137,6 @@ function cityInfo (cityData) {
 
 //adds current date to header
 $("#currentDate").text(current.format('MMMM Do YYYY, h:mm a'))
-//runs getCity upon search click
-$("#searchButton").on("click", getCity)
+//createHistory();
+//searchInput.onclick = citySearch;
+searchButton.addEventListener("click", useSearchHistory)
