@@ -1,11 +1,12 @@
-var current = moment();
-var searchBar = document.querySelector("input");
 var apiKey = "0c8dcf810ad08707d092e05436d4c4c0";
-var apiUrl = "https://api.openweathermap.org";
-var recentSearch = [];
-var searchInput = document.getElementById("searchInput");
-var searchButton = document.querySelector("searchButton")
-
+var city= '';
+var searchCity = $('#city-input');
+var searchButton = $('#search-button');
+var currentCity = $('current-city');
+var currentTemperature = $('temperature');
+var currentHumidity = $('#humidity');
+var currentWind = $('#wind-speed');
+var sCity = [];
 
 
 //Draws current day weather data
