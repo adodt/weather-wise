@@ -38,5 +38,31 @@ function currentWeather(city) {
         var date = new Date(response.dt * 1000).toLocaleDateString();
         $(currentCity).html(response.name + '' + '(' + date + ')' + '<img src=' + iconurl + '>');
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
-    })
+
+        $(currentTemperature).htmk(" " + (tempF).toFixed(2) +' '+"&#8457");
+        $(currentHumidity).html(' ' + response.main.humidity + ' '+ "%");
+        var ws = response.wind.speed;
+        var windsmph = (ws * 2.237).toFixed(1);
+        $(currentWind).html(" " + windsmph + " " + "MPH");
+
+        forecast(response.id);
+        if (response.cod == 200) {
+            sCity = JSON.parse(localStorage.getItem('cityname'));
+            console.log(sCity);
+            if (sCity == null) {
+                sCity = [];
+                sCity.push(city.toUppderCase()
+                );
+                localStorage.setItem('cityname', JSON.stringify(sCity));
+                addToList(city);
+            }
+            else {
+                if (find(city) > 0) {
+                    sCity.push(city.toUpperCase());
+                    localStorage.setItem('cityname', JSON.stringify(sCity));
+                    addToList(city);
+                }
+            }
+        }
+    });
 }
